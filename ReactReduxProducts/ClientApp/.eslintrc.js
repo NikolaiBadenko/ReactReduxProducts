@@ -1,56 +1,27 @@
 module.exports = {
     "extends": "react-app",
     "parser": "babel-eslint",
-    //required to avoid 'document' is not defined error
     "env": {
         "browser": true,
         "node": true,
         "jest": true
     },
-    // "settings": {
-    //     "import/resolver": {
-    //         "webpack": {
-    //             "config": "webpack.config.js"
-    //         }    
-    //     }
-    // },
     "globals": {
         "_debug": false,
     },
     "rules": {
-
         "max-len": ["error", { "code": 140 }],
-
         "comma-dangle": "error",
-        // by default it's setup on linux linebreak
         "linebreak-style": ["error", "windows"],
 
-        // problem with input inside of label in product tile,
-        //TBD - correct to redo styles and remove ths rule
-        "jsx-a11y/label-has-for": ["error", {
-            "components": ["Label"],
-            "required": {
-                "some": ["nesting", "id"]
-            },
-            "allowChildren": false,
-        }],
-
-        // we can use tabs
         "no-tabs": "off",
-
-        // tabs should contain 4 spaces
         "indent": ["error", 4, { "SwitchCase": 1 }],
 
-        // this rule leads in some conflict with standard indent rule
         "react/jsx-indent": ["error", 4],
-        // this rule leads in some conflict with standard indent rule
         "react/jsx-indent-props": ["error", 4],
 
-        // javascript:void(0) not allowed
         "no-script-url": "error",
 
-        //  'data.profileLinksLoggedIn' is missing in props validation
-        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prop-types.md
         "react/prop-types": "error",
 
         //can't use stateless function for entry points
@@ -99,20 +70,5 @@ module.exports = {
 
         // require or disallow named function expressions
         "func-names": "off",
-
-        // new rules 16.1.0
-        "prefer-destructuring": "off", // 60 errors
-        "no-restricted-globals": "off", // 13 errors
-        "jsx-a11y/click-events-have-key-events": "off", // 6 errors
-        "react/no-unused-state": "off", // 13 errors
-        "react/default-props-match-prop-types": "off", // 7 errors
-
-        // new rules 17.1.0
-        "jsx-a11y/label-has-associated-control": "off", // 1 errors
-        "react/destructuring-assignment": "off", // 1634 errors
-        "react/button-has-type": "off", // 47 errors
-        "react/jsx-one-expression-per-line": "off", // 291 auto errors
-        "react/no-access-state-in-setstate": "off", // 43 errors
-        "react/sort-comp": "off", // 18 errors
     }
 };

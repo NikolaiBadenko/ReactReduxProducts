@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getProductList } from 'services/product/selectors';
+import { getProductList as getProductListSelector} from 'services/product/selectors';
 import {
     getAllProductsList,
     deleteProduct
@@ -36,7 +36,7 @@ class ProductList extends PureComponent {
 }
 
 const mapStateToProps = state => ({
-    products: getProductList(state)
+    products: getProductListSelector(state)
 });
 
 const mapDispatchToProps = dispatch => ({

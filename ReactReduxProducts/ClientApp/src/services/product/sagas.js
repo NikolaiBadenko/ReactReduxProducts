@@ -4,7 +4,8 @@ import {
     setAllProductsList,
     deleteProduct,
     getProductById,
-    setCurrentProduct
+    setCurrentProduct,
+    addOrUpdateProduct
 } from 'services/product/actions';
 
 function* getAllProductsListSaga() {
@@ -22,6 +23,18 @@ function* getProductByIdSaga(actions) {
         const url = 'api/ProductApi/GetProductById/'+actions.payload.id;
         const product = yield fetch(url).then(response => response.json(), );
         yield put({type: setCurrentProduct, product: product});
+    } catch (e) {
+        // yield put({type: "USER_FETCH_FAILED", message: e.message});
+    }
+}
+
+function* addOrUpdateProductSaga(actions) {
+    try {
+        // const url = 'api/ProductApi/GetProductById/'+actions.payload.id;
+        // const product = yield fetch(url).then(response => response.json(), );
+        // yield put({type: setCurrentProduct, product: product});
+        console.log(actions.payload);
+        yield
     } catch (e) {
         // yield put({type: "USER_FETCH_FAILED", message: e.message});
     }
@@ -47,6 +60,7 @@ function* productSaga() {
     yield takeEvery(getAllProductsList, getAllProductsListSaga);
     yield takeEvery(getProductById, getProductByIdSaga);
     yield takeEvery(deleteProduct, deleteProductSaga);
+    yield takeEvery(addOrUpdateProduct, addOrUpdateProductSaga);
 }
 
 export default productSaga;
