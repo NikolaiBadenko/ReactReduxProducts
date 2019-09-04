@@ -1,0 +1,16 @@
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  .content {
+    padding: 20px;
+    min-height: 100%;
+    margin: 0 auto -50px;
+  }
+  .footer {
+    background-color: gray;
+    height: 50px;
+  }
+  .push {
+    height: 50px;
+  }

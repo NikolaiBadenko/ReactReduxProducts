@@ -2,7 +2,7 @@
   "name": "react_redux_products",
   "version": "0.2.0",
   "private": true,
-  "author": "",
+  "author": "baden",
   "dependencies": {
     "babel-eslint": "10.0.2",
     "bootstrap": "4.3.1",

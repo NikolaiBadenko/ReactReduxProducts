@@ -121,9 +121,33 @@ namespace ReactReduxProducts.Controllers
                 {
                     Description = "An sincerity so extremity he additions. Her yet there truth merit. Mrs all projecting favourable now unpleasing. Son law garden chatty temper. Oh children provided to mr elegance marriage strongly. Off can admiration prosperous now devonshire diminution law.",
                     Id = Guid.NewGuid(),
-                    Name = "Mega Product",
+                    Name = "Puper Product",
                     Price = 300.1,
                     Rating = 5,
+                },
+                new Product()
+                {
+                    Description = "Swearing does plagiarise expenses lower proprietary else's i've important. Surprise hypnosis activity budgie languages possible working. Establishment removed paper council’s doctor plastic my chair. Watching submission well usernames watching terrible got. Same Much Today term commercial salutations incurred they're hypnotised cure call trade costs really. This few council’s conditions everyone worry aggrieved 18.",
+                    Id = Guid.NewGuid(),
+                    Name = "Duper Product",
+                    Price = 8800,
+                    Rating = 7,
+                },
+                new Product()
+                {
+                    Description = "Legal reveal fears live the neighbours traditional television offend relevant.",
+                    Id = Guid.NewGuid(),
+                    Name = "Mega Product",
+                    Price = 31337,
+                    Rating = 8,
+                },
+                new Product()
+                {
+                    Description = "Absolutely room what if. Then non-exclusive these hypnotised. Interact they're elsewhere last other greetings comes although spiders everyone known told.",
+                    Id = Guid.NewGuid(),
+                    Name = "Imba Product",
+                    Price = 300,
+                    Rating = 3,
                 }
             };
             return productlist;

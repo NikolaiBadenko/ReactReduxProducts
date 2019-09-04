@@ -6,9 +6,9 @@ import {
     getAllProductsList,
     deleteProduct
 } from 'services/product/actions';
-import ProductTile from 'components/product/product-tile';
+import ProductCards from 'components/product/product-cards';
 
-class ProductList extends PureComponent {
+class ProductsPage extends PureComponent {
     static propTypes = {
         getProductList: PropTypes.func,
         deleteProductById: PropTypes.func,
@@ -20,17 +20,12 @@ class ProductList extends PureComponent {
     }
 
     render() {
-        const productTiles = this.props.products.map(product => (
-            <ProductTile
-                key={product.id}
-                deleteProduct={this.props.deleteProductById}
-                { ...product }
-            />
-        ));
+        const { products, deleteProductById } = this.props;
         return (
-            <div className="list-group">
-                {productTiles}
-            </div>
+            products && <ProductCards 
+                deleteProductById={deleteProductById}
+                products={products}
+            />
         );
     }
 }
@@ -46,4 +41,4 @@ const mapDispatchToProps = dispatch => ({
     deleteProductById: (id) => { dispatch(deleteProduct(id)); }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductList);
+export default connect(mapStateToProps, mapDispatchToProps)(ProductsPage);
