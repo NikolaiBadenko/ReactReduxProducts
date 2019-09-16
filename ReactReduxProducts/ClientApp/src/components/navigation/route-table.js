@@ -9,6 +9,9 @@ const routeTable = {
             delete: '/delete',
         },
     },
+    quiz: {
+        base: '/quiz',
+    },
 };
 
 export default routeTable;

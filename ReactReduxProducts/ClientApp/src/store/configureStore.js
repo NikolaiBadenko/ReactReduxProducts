@@ -3,11 +3,14 @@ import createSagaMiddleware from 'redux-saga'
 import thunk from 'redux-thunk';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 import * as Products from 'services/product/reducers';
+import * as Quiz from 'services/quiz/reducers';
 import ProductSaga from 'services/product/sagas';
+import QuizSaga from 'services/quiz/sagas';
 
 export default function configureStore(history, initialState) {
     const reducers = {
-        product: Products.reducer
+        product: Products.reducer,
+        quiz: Quiz.reducer
     };
 
     // create the saga middleware
@@ -41,5 +44,6 @@ export default function configureStore(history, initialState) {
 
     // then run the saga
     sagaMiddleware.run(ProductSaga)
+    sagaMiddleware.run(QuizSaga)
     return store;
 }

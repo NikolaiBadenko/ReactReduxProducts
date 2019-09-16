@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace ReactReduxProducts
 {
@@ -43,6 +44,10 @@ namespace ReactReduxProducts
                 app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
+
+            // register path to App_Data
+            string baseDir = env.ContentRootPath;
+            AppDomain.CurrentDomain.SetData("DataDirectory", System.IO.Path.Combine(baseDir, "App_Data"));
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
